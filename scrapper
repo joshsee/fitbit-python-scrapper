@@ -1,0 +1,11 @@
+import requests
+session = requests.session()
+from pyquery.pyquery import PyQuery as pq
+login_page = session.get('https://www.fitbit.com/login')
+form = pq(login_page.content).find('#loginForm')
+action = form.attr('action')
+data = dict((i.name, i.value) for i in form.find('input'))
+data.update({'email': 'email', 'password': 'password'})
+r = session.post(action, data)
+payload = {'request': '{"template":"/mgmt/ajaxTemplate.jsp","serviceCalls":[{"name":"activityTileData","args":{"dataTypes":"steps","date":"2014-07-20"},"method":"getIntradayData"}]}'}
+r = session.post('https://www.fitbit.com/ajaxapi', data=payload)
