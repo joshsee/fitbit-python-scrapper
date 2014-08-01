@@ -1,0 +1,38 @@
+#Pycharm files:
+*.idea
+
+# Python bytecode:
+*.py[co]
+
+# Packaging files:
+*.egg*
+
+# Editor temp files:
+*.swp
+*~
+
+# Sphinx docs:
+build
+
+# SQLite3 database files:
+*.db
+
+# Logs:
+*.log
+
+# Vagrant:
+*.vagrant
+
+# Static Folder
+static
+assets
+
+# South
+migrations
+
+# logs-rtr
+logs-rtr
+
+.coverage
+reports
+doc
